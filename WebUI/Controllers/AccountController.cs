@@ -25,7 +25,7 @@ namespace WebUI.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public async Task<IActionResult> Register([FromForm] RegisterUserDto dto)
+        public async Task<IActionResult> Register([FromBody] RegisterUserDto dto)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace WebUI.Controllers
 
         [Route("Login")]
         [HttpPost]
-        public async Task<IActionResult> Login([FromForm] LoginUserDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginUserDto dto)
         {
             if (ModelState.IsValid)
             {

@@ -26,6 +26,8 @@ public class SubjectController : ControllerBase
         return Ok(subjects);
     }
 
+
+
     [HttpPost("AddSubject")]
     public async Task<IActionResult> AddSubject([FromBody] SubjectDto subjectDto)
     {

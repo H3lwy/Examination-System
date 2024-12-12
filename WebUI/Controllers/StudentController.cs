@@ -1,10 +1,11 @@
 ﻿using Application.DTOs;
 using Domain.Models;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-//[Authorize(Roles = "Student")]
+[Authorize(Roles = "Student")]
 [Route("api/[controller]")]
 [ApiController]
 public class StudentController : ControllerBase
@@ -61,38 +62,61 @@ public class StudentController : ControllerBase
         return Ok(randomQuestions);
     }
 
+    [HttpGet("GetExamHistory/{studentId}")]
+    public async Task<IActionResult> GetExamHistory(string studentId)
+    {
+        var examHistory = await _Db.StudentExams
+            .Where(e => e.StudentId == studentId)
+            .Include(e => e.Exam)
+            .Select(e => new
+            {
+                e.StudentExamId,
+                e.DateTimeTaken,
+                e.Score,
+                IsPassed = e.Score >= e.Exam.PassScore,
+                e.Exam.ExamName,
+                e.Exam.PassScore,
+                //e.Exam.TimeLimit,
+                e.Exam.Subject.SubjectName
+            })
+            .OrderByDescending(se => se.DateTimeTaken)
+            .ToListAsync();
+
+        if (!examHistory.Any())
+            return NotFound("No exam history found for the student.");
+
+        return Ok(examHistory);
+    }
+
+
     [HttpPost("SubmitExamAnswers")]
     public async Task<IActionResult> SubmitExamAnswers([FromBody] ExamSubmissionDto submission)
     {
         if (!ModelState.IsValid) return BadRequest("Invalid data.");
 
-        // التحقق من وجود الطالب والامتحان
         var student = await _Db.Users.FindAsync(submission.StudentId);
         if (student == null) return NotFound("Student not found.");
 
         var exam = await _Db.Exams.FindAsync(submission.ExamId);
         if (exam == null) return NotFound("Exam not found.");
 
-        // إنشاء سجل الامتحان
         var studentExam = new StudentExam
         {
             StudentId = submission.StudentId,
             ExamId = submission.ExamId,
             SubjectId = submission.SubjectId,
             DateTimeTaken = DateTime.UtcNow,
-            IsCompleted = false // تعيين كغير مكتمل مبدئيًا
+            IsCompleted = false
         };
 
         await _Db.StudentExams.AddAsync(studentExam);
         await _Db.SaveChangesAsync();
 
-        // حساب الإجابات الصحيحة
         double correctAnswers = 0;
         double totalQuestions = submission.Answers.Count;
 
         foreach (var answer in submission.Answers)
         {
-            // جلب الخيار الصحيح للسؤال
             var correctChoice = await _Db.Choices
                 .Where(c => c.QuestionId == answer.QuestionId && c.IsCorrect)
                 .FirstOrDefaultAsync();
@@ -100,10 +124,8 @@ public class StudentController : ControllerBase
             if (correctChoice == null)
                 return NotFound($"No correct choice found for Question ID {answer.QuestionId}.");
 
-            // مقارنة الإجابة المقدمة بالإجابة الصحيحة
             bool isCorrect = correctChoice.ChoiceId == answer.SelectedChoiceId;
 
-            // تسجيل الإجابة في جدول الإجابات
             var answerRecord = new StudentExamQuestionAnswer
             {
                 StudentExamId = studentExam.StudentExamId,
@@ -118,11 +140,9 @@ public class StudentController : ControllerBase
                 correctAnswers++;
         }
 
-        // حساب النتيجة النهائية
         studentExam.Score = (correctAnswers / totalQuestions) * 100;
         studentExam.IsCompleted = true;
 
-        // تحديث السجل في قاعدة البيانات
         _Db.StudentExams.Update(studentExam);
         await _Db.SaveChangesAsync();
 
@@ -130,6 +150,7 @@ public class StudentController : ControllerBase
         {
             Message = "Exam submitted successfully.",
             Score = studentExam.Score,
+            PassScore = exam.PassScore,
             IsPassed = studentExam.Score >= exam.PassScore
         });
     }

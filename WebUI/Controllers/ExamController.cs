@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Authorize(Policy = "Admin")]
+
 [Route("api/[controller]")]
 [ApiController]
 public class ExamController : ControllerBase
@@ -44,6 +44,36 @@ public class ExamController : ControllerBase
         });
     }
 
+    [HttpGet("ExamsBySubject/{subjectId}")]
+    public async Task<IActionResult> GetExamsBySubject(int subjectId, int pageNumber = 1, int pageSize = 10)
+    {
+        var exams = await _Db.Exams
+            .Where(e => e.SubjectId == subjectId)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .Select(e => new
+            {
+                e.ExamId,
+                e.ExamName,
+                e.TimeLimit,
+                e.PassScore
+            })
+            .ToListAsync();
+
+        var totalExams = await _Db.Exams.CountAsync(e => e.SubjectId == subjectId);
+
+        if (!exams.Any())
+            return NotFound($"No exams found for Subject ID {subjectId}.");
+
+        return Ok(new
+        {
+            Exams = exams,
+            TotalPages = (int)Math.Ceiling((double)totalExams / pageSize),
+            CurrentPage = pageNumber
+        });
+    }
+
+    [Authorize(Roles = "Admin")]
     [HttpPost("AddExam")]
     public async Task<IActionResult> AddExam([FromBody] ExamDto examDto)
     {
@@ -71,7 +101,7 @@ public class ExamController : ControllerBase
         });
     }
 
-
+    [Authorize(Roles = "Admin")]
     [HttpPut("EditExam/{id}")]
     public async Task<IActionResult> EditExam(int id, [FromBody] ExamDto examDto)
     {
@@ -89,7 +119,7 @@ public class ExamController : ControllerBase
 
         return Ok(new { Message = "Exam updated successfully.", Exam = existingExam });
     }
-
+    [Authorize(Roles = "Admin")]
     [HttpDelete("DeleteExam/{id}")]
     public async Task<IActionResult> DeleteExam(int id)
     {

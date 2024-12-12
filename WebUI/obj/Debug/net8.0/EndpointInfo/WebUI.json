@@ -12,60 +12,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "required": [
-                  "ConfirmPassword",
-                  "Email",
-                  "FirstName",
-                  "LastName",
-                  "Password",
-                  "UserName"
-                ],
-                "type": "object",
-                "properties": {
-                  "FirstName": {
-                    "type": "string"
-                  },
-                  "LastName": {
-                    "type": "string"
-                  },
-                  "UserName": {
-                    "type": "string"
-                  },
-                  "Password": {
-                    "type": "string",
-                    "format": "password"
-                  },
-                  "ConfirmPassword": {
-                    "type": "string",
-                    "format": "password"
-                  },
-                  "Email": {
-                    "type": "string",
-                    "format": "email"
-                  }
-                }
-              },
-              "encoding": {
-                "FirstName": {
-                  "style": "form"
-                },
-                "LastName": {
-                  "style": "form"
-                },
-                "UserName": {
-                  "style": "form"
-                },
-                "Password": {
-                  "style": "form"
-                },
-                "ConfirmPassword": {
-                  "style": "form"
-                },
-                "Email": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserDto"
               }
             }
           }
@@ -84,31 +43,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "required": [
-                  "Email",
-                  "Password"
-                ],
-                "type": "object",
-                "properties": {
-                  "Email": {
-                    "type": "string",
-                    "format": "email"
-                  },
-                  "Password": {
-                    "type": "string",
-                    "format": "password"
-                  }
-                }
-              },
-              "encoding": {
-                "Email": {
-                  "style": "form"
-                },
-                "Password": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/LoginUserDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserDto"
               }
             }
           }
@@ -366,6 +313,47 @@
           "Exam"
         ],
         "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exam/ExamsBySubject/{subjectId}": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "parameters": [
+          {
+            "name": "subjectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
           {
             "name": "pageNumber",
             "in": "query",
@@ -650,6 +638,28 @@
         }
       }
     },
+    "/api/Student/GetExamHistory/{studentId}": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Student/SubmitExamAnswers": {
       "post": {
         "tags": [
@@ -883,6 +893,26 @@
         },
         "additionalProperties": false
       },
+      "LoginUserDto": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          }
+        },
+        "additionalProperties": false
+      },
       "QuestionDto": {
         "type": "object",
         "properties": {
@@ -910,6 +940,47 @@
               "$ref": "#/components/schemas/ChoiceDto"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterUserDto": {
+        "required": [
+          "confirmPassword",
+          "email",
+          "firstName",
+          "lastName",
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "userName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          },
+          "confirmPassword": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
           }
         },
         "additionalProperties": false
