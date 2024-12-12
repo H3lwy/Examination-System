@@ -17,28 +17,17 @@ public class StudentController : ControllerBase
         _Db = Db;
     }
 
-    [HttpGet("GetAllSubjects")]
-    public async Task<IActionResult> GetAllSubjects()
-    {
-        var subjects = await _Db.Subjects.ToListAsync();
-        if (!subjects.Any())
-            return NotFound("No subjects found.");
-
-        return Ok(subjects.Select(s => new
-        {
-            s.SubjectName,
-            s.SubjectDescription
-        }));
-    }
-
-
     [HttpGet("GetRandomQuestions/{examId}")]
     public async Task<IActionResult> GetRandomQuestions(int examId)
     {
+        var exam = await _Db.Exams
+       .Where(e => e.ExamId == examId)
+       .FirstOrDefaultAsync();
+
         var examQuestions = await _Db.ExamQuestions
             .Where(e => e.ExamId == examId)
             .Include(e => e.Question)
-                .ThenInclude(q => q.choices)
+            .ThenInclude(q => q.choices)
             .Select(e => e.Question)
             .ToListAsync();
 
@@ -59,7 +48,13 @@ public class StudentController : ControllerBase
                 })
             });
 
-        return Ok(randomQuestions);
+        var response = new
+        {
+            TimeLimit = exam.TimeLimit,
+            Questions = randomQuestions
+        };
+
+        return Ok(response);
     }
 
     [HttpGet("GetExamHistory/{studentId}")]
@@ -76,7 +71,6 @@ public class StudentController : ControllerBase
                 IsPassed = e.Score >= e.Exam.PassScore,
                 e.Exam.ExamName,
                 e.Exam.PassScore,
-                //e.Exam.TimeLimit,
                 e.Exam.Subject.SubjectName
             })
             .OrderByDescending(se => se.DateTimeTaken)
@@ -111,6 +105,23 @@ public class StudentController : ControllerBase
 
         await _Db.StudentExams.AddAsync(studentExam);
         await _Db.SaveChangesAsync();
+
+        if (submission.Answers == null || submission.Answers.Count == 0)
+        {
+            studentExam.Score = 0;
+            studentExam.IsCompleted = true;
+
+            _Db.StudentExams.Update(studentExam);
+            await _Db.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = "Exam submitted successfully.",
+                Score = studentExam.Score,
+                PassScore = exam.PassScore,
+                IsPassed = false
+            });
+        }
 
         double correctAnswers = 0;
         double totalQuestions = submission.Answers.Count;
@@ -154,6 +165,7 @@ public class StudentController : ControllerBase
             IsPassed = studentExam.Score >= exam.PassScore
         });
     }
+
 
 
 

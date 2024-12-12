@@ -44,6 +44,30 @@ public class ExamController : ControllerBase
         });
     }
 
+    [HttpGet("GetExamById/{id}")]
+    public async Task<IActionResult> GetExamById(int id)
+    {
+        var exam = await _Db.Exams
+            .Include(e => e.Subject)
+            .Where(e => e.ExamId == id)
+            .Select(e => new
+            {
+                e.ExamId,
+                e.ExamName,
+                e.SubjectId,
+                e.Subject.SubjectName,
+                e.TimeLimit,
+                e.PassScore
+            })
+            .FirstOrDefaultAsync();
+
+        if (exam == null)
+            return NotFound($"Exam with ID {id} not found.");
+
+        return Ok(exam);
+    }
+
+
     [HttpGet("ExamsBySubject/{subjectId}")]
     public async Task<IActionResult> GetExamsBySubject(int subjectId, int pageNumber = 1, int pageSize = 10)
     {

@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Domain.Models;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,8 +27,18 @@ public class SubjectController : ControllerBase
         return Ok(subjects);
     }
 
+    [Authorize(Roles = "Admin")]
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetSubjectById(int id)
+    {
+        var subject = await _Db.Subjects.FindAsync(id);
+        if (subject == null)
+            return NotFound($"Subject with ID {id} not found.");
 
+        return Ok(subject);
+    }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost("AddSubject")]
     public async Task<IActionResult> AddSubject([FromBody] SubjectDto subjectDto)
     {
@@ -45,6 +56,7 @@ public class SubjectController : ControllerBase
         return Ok(new { Message = "Subject added successfully.", Subject = subject });
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("EditSubject/{id}")]
     public async Task<IActionResult> EditSubject(int id, [FromBody] SubjectDto subjectDto)
     {
@@ -60,7 +72,7 @@ public class SubjectController : ControllerBase
 
         return Ok(new { Message = "Subject updated successfully.", Subject = subject });
     }
-
+    [Authorize(Roles = "Admin")]
     [HttpDelete("DeleteSubject/{id}")]
     public async Task<IActionResult> DeleteSubject(int id)
     {

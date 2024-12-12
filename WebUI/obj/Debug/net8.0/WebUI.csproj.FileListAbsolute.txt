@@ -318,3 +318,4 @@ C:\Users\asus\source\repos\Examination-System\WebUI\obj\Debug\net8.0\WebUI.genru
 C:\Users\asus\source\repos\Examination-System\WebUI\obj\Debug\net8.0\ref\WebUI.dll
 C:\Users\asus\source\repos\Examination-System\WebUI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\asus\source\repos\Examination-System\WebUI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\asus\source\repos\Examination-System\WebUI\obj\Debug\net8.0\WebUI.sourcelink.json

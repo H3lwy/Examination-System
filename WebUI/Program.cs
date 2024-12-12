@@ -27,7 +27,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add Identity
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();

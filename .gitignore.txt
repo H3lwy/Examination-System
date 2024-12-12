@@ -1,0 +1,12 @@
+# Ignore the .vs folder (Visual Studio)
+.vs/
+
+# Ignore build directories
+bin/
+obj/
+
+# Ignore log files
+*.log
+
+# Ignore user-specific files
+*.user

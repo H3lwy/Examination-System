@@ -283,6 +283,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ExamController",
+    "Method": "GetExamById",
+    "RelativePath": "api/Exam/GetExamById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebUI.Controllers.QuestionController",
     "Method": "GetAllQuestions",
     "RelativePath": "api/Question",
@@ -363,16 +379,6 @@
   },
   {
     "ContainingType": "StudentController",
-    "Method": "GetAllSubjects",
-    "RelativePath": "api/Student/GetAllSubjects",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "StudentController",
     "Method": "GetExamHistory",
     "RelativePath": "api/Student/GetExamHistory/{studentId}",
     "HttpMethod": "GET",
@@ -414,6 +420,22 @@
       {
         "Name": "submission",
         "Type": "Application.DTOs.ExamSubmissionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SubjectController",
+    "Method": "GetSubjectById",
+    "RelativePath": "api/Subject/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

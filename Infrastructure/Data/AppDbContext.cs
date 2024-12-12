@@ -66,15 +66,14 @@ namespace Infrastructure.Data
                 .HasOne(se => se.Exam)
                 .WithMany(e => e.StudentExams)
                 .HasForeignKey(se => se.ExamId)
-                .OnDelete(DeleteBehavior.Cascade); // Prevent cascade delete
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<StudentExam>()
                 .HasOne(se => se.Subject)
                 .WithMany(s => s.students)
                 .HasForeignKey(se => se.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade); // Prevent cascade delete
+                .OnDelete(DeleteBehavior.Cascade);
 
-            // Subject Relationships
             builder.Entity<Subject>()
                 .HasMany(s => s.exams)
                 .WithOne(e => e.Subject)

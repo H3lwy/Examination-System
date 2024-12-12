@@ -32,3 +32,4 @@ C:\Users\asus\source\repos\Examination-System\Application\obj\Debug\net8.0\Appli
 C:\Users\asus\source\repos\Examination-System\Application\obj\Debug\net8.0\refint\Application.dll
 C:\Users\asus\source\repos\Examination-System\Application\obj\Debug\net8.0\Application.pdb
 C:\Users\asus\source\repos\Examination-System\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Users\asus\source\repos\Examination-System\Application\obj\Debug\net8.0\Application.sourcelink.json
