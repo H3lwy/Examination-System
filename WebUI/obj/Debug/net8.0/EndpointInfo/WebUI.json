@@ -188,125 +188,6 @@
         }
       }
     },
-    "/api/Choice/GetChoicesByQuestion/{questionId}": {
-      "get": {
-        "tags": [
-          "Choice"
-        ],
-        "parameters": [
-          {
-            "name": "questionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Choice/AddChoices": {
-      "post": {
-        "tags": [
-          "Choice"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoicesDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoicesDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoicesDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Choice/UpdateChoice/{choiceId}": {
-      "put": {
-        "tags": [
-          "Choice"
-        ],
-        "parameters": [
-          {
-            "name": "choiceId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoiceDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoiceDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChoiceDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Choice/DeleteChoice/{choiceId}": {
-      "delete": {
-        "tags": [
-          "Choice"
-        ],
-        "parameters": [
-          {
-            "name": "choiceId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Exam/AllExams": {
       "get": {
         "tags": [
@@ -347,6 +228,29 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exam/GetQuestionsByExam/{examId}": {
+      "get": {
+        "tags": [
+          "Exam"
+        ],
+        "parameters": [
+          {
+            "name": "examId",
             "in": "path",
             "required": true,
             "schema": {
@@ -499,10 +403,30 @@
         }
       }
     },
-    "/api/Question": {
+    "/api/Question/AllQuestions": {
       "get": {
         "tags": [
           "Question"
+        ],
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -595,6 +519,29 @@
         }
       }
     },
+    "/api/Question/GetQuestionsBySubject/{subjectId}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "parameters": [
+          {
+            "name": "subjectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Question/AddQuestion": {
       "post": {
         "tags": [
@@ -604,17 +551,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuestionDto"
+                "$ref": "#/components/schemas/QuestionWithChoicesDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuestionDto"
+                "$ref": "#/components/schemas/QuestionWithChoicesDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/QuestionDto"
+                "$ref": "#/components/schemas/QuestionWithChoicesDto"
               }
             }
           }
@@ -722,6 +669,29 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Subject/Examhistory/{subjectId}": {
+      "get": {
+        "tags": [
+          "Subject"
+        ],
+        "parameters": [
+          {
+            "name": "subjectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -863,23 +833,6 @@
         },
         "additionalProperties": false
       },
-      "ChoicesDto": {
-        "type": "object",
-        "properties": {
-          "questionId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "choices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ChoiceDto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ExamDto": {
         "type": "object",
         "properties": {
@@ -898,6 +851,14 @@
           "passScore": {
             "type": "integer",
             "format": "int32"
+          },
+          "questionIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -947,26 +908,16 @@
         },
         "additionalProperties": false
       },
-      "QuestionDto": {
-        "type": "object",
-        "properties": {
-          "questionText": {
-            "type": "string",
-            "nullable": true
-          },
-          "examId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "QuestionWithChoicesDto": {
         "type": "object",
         "properties": {
           "questionText": {
             "type": "string",
             "nullable": true
+          },
+          "subjectId": {
+            "type": "integer",
+            "format": "int32"
           },
           "choices": {
             "type": "array",

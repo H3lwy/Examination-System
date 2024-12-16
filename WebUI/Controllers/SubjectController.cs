@@ -27,7 +27,7 @@ public class SubjectController : ControllerBase
         return Ok(subjects);
     }
 
-    [Authorize(Roles = "Admin")]
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetSubjectById(int id)
     {
@@ -36,6 +36,37 @@ public class SubjectController : ControllerBase
             return NotFound($"Subject with ID {id} not found.");
 
         return Ok(subject);
+    }
+
+    [HttpGet("Examhistory/{subjectId}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetExamHistoryBySubject(int subjectId)
+    {
+        var subject = await _Db.Subjects.FindAsync(subjectId);
+        if (subject == null)
+            return NotFound($"Subject with ID {subjectId} not found.");
+
+        var examHistories = await _Db.StudentExams
+            .Where(e => e.Exam.SubjectId == subjectId)
+            .Include(e => e.Exam)
+            .Include(e => e.Student)
+            .Select(e => new ExamHistoryBySubjectDto
+            {
+                StudentExamId = e.StudentExamId,
+                DateTimeTaken = e.DateTimeTaken,
+                Score = e.Score,
+                IsPassed = e.Score >= e.Exam.PassScore,
+                ExamName = e.Exam.ExamName,
+                PassScore = e.Exam.PassScore,
+                StudentName = $"{e.Student.FirstName} {e.Student.LastName}"
+            })
+            .OrderByDescending(se => se.DateTimeTaken)
+            .ToListAsync();
+
+        if (!examHistories.Any())
+            return NotFound("No exam history found for this subject.");
+
+        return Ok(examHistories);
     }
 
     [Authorize(Roles = "Admin")]

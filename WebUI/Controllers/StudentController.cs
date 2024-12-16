@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Authorize(Roles = "Student")]
 [Route("api/[controller]")]
 [ApiController]
 public class StudentController : ControllerBase
@@ -16,7 +15,7 @@ public class StudentController : ControllerBase
     {
         _Db = Db;
     }
-
+    [Authorize(Roles = "Student")]
     [HttpGet("GetRandomQuestions/{examId}")]
     public async Task<IActionResult> GetRandomQuestions(int examId)
     {
@@ -56,7 +55,7 @@ public class StudentController : ControllerBase
 
         return Ok(response);
     }
-
+    [Authorize(Roles = "Admin,Student")]
     [HttpGet("GetExamHistory/{studentId}")]
     public async Task<IActionResult> GetExamHistory(string studentId)
     {
@@ -82,7 +81,7 @@ public class StudentController : ControllerBase
         return Ok(examHistory);
     }
 
-
+    [Authorize(Roles = "Student")]
     [HttpPost("SubmitExamAnswers")]
     public async Task<IActionResult> SubmitExamAnswers([FromBody] ExamSubmissionDto submission)
     {

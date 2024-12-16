@@ -6,5 +6,6 @@
         public int SubjectId { get; set; }
         public TimeSpan TimeLimit { get; set; }
         public int PassScore { get; set; }
+        public List<int> QuestionIds { get; set; }
     }
 }

@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\Examination-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DACB9E53-7169-438B-A49E-5A6F3C8FC890}|Infrastructure\\Infrastructure.csproj|c:\\users\\asus\\source\\repos\\examination-system\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DACB9E53-7169-438B-A49E-5A6F3C8FC890}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\choicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\choicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +17,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|c:\\users\\asus\\source\\repos\\examination-system\\webui\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8903885D-8E55-4857-9793-9D666587E49D}|WebUI\\WebUI.csproj|solutionrelative:webui\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACB9E53-7169-438B-A49E-5A6F3C8FC890}|Infrastructure\\Infrastructure.csproj|c:\\users\\asus\\source\\repos\\examination-system\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DACB9E53-7169-438B-A49E-5A6F3C8FC890}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|c:\\users\\asus\\source\\repos\\examination-system\\domain\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|solutionrelative:domain\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19BE7204-8A50-4824-8574-CBA3084BFE86}|Application\\Application.csproj|c:\\users\\asus\\source\\repos\\examination-system\\application\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19BE7204-8A50-4824-8574-CBA3084BFE86}|Application\\Application.csproj|solutionrelative:application\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|c:\\users\\asus\\source\\repos\\examination-system\\domain\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|solutionrelative:domain\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|c:\\users\\asus\\source\\repos\\examination-system\\domain\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2094CD04-8712-43A8-920A-2B9350161FB3}|Domain\\Domain.csproj|solutionrelative:domain\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\source\\repos\\Examination-System\\Application\\DTOs\\ExamHistoryBySubjectDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Application\\DTOs\\ExamHistoryBySubjectDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,19 +54,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "WebUI\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "WebUI\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAkwEgAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebUI\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebUI\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAA3wHIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T12:49:27.034Z",
+              "WhenOpened": "2024-12-16T20:42:03.233Z",
               "EditorCaption": ""
             },
             {
@@ -59,81 +75,125 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "ExamHistoryBySubjectDto.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Application\\DTOs\\ExamHistoryBySubjectDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ExamHistoryBySubjectDto.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Application\\DTOs\\ExamHistoryBySubjectDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ExamHistoryBySubjectDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T17:41:15.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SubjectController.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\SubjectController.cs",
               "RelativeDocumentMoniker": "WebUI\\Controllers\\SubjectController.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\SubjectController.cs",
               "RelativeToolTip": "WebUI\\Controllers\\SubjectController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwCkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T17:44:58.335Z",
+              "WhenOpened": "2024-12-15T13:50:58.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ChoiceController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ChoiceController.cs",
-              "RelativeDocumentMoniker": "WebUI\\Controllers\\ChoiceController.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ChoiceController.cs",
-              "RelativeToolTip": "WebUI\\Controllers\\ChoiceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebUI\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebUI\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T15:39:38.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T00:59:59.312Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ExamController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ExamController.cs",
-              "RelativeDocumentMoniker": "WebUI\\Controllers\\ExamController.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ExamController.cs",
-              "RelativeToolTip": "WebUI\\Controllers\\ExamController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwDcAAAAbAAAAAAAAAA==",
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "WebUI\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "WebUI\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwFEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T15:36:24.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T01:00:46.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Program.cs",
-              "RelativeDocumentMoniker": "WebUI\\Program.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Program.cs",
-              "RelativeToolTip": "WebUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T12:50:45.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Infrastructure\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Infrastructure\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAUwHcAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvwwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:50:05.53Z",
+              "WhenOpened": "2024-12-14T20:16:52.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Exam.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Exam.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Exam.cs",
+              "RelativeToolTip": "Domain\\Models\\Exam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T20:12:01.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Application\\DTOs\\ExamDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ExamDto.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Application\\DTOs\\ExamDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ExamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T14:36:24.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Subject.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Subject.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Subject.cs",
+              "RelativeToolTip": "Domain\\Models\\Subject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T14:02:23.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExamController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ExamController.cs",
+              "RelativeDocumentMoniker": "WebUI\\Controllers\\ExamController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\ExamController.cs",
+              "RelativeToolTip": "WebUI\\Controllers\\ExamController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAwwIgAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:55:20.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QuestionController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\QuestionController.cs",
-              "RelativeDocumentMoniker": "WebUI\\Controllers\\QuestionController.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\WebUI\\Controllers\\QuestionController.cs",
-              "RelativeToolTip": "WebUI\\Controllers\\QuestionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Examination-System\\Domain\\Models\\Question.cs",
+              "RelativeToolTip": "Domain\\Models\\Question.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:49:20.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T13:53:32.995Z"
             }
           ]
         }

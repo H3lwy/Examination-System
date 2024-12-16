@@ -30,13 +30,13 @@ namespace Infrastructure.Data
                 .HasOne(i => i.Exam)
                 .WithMany(e => e.ExamQuestions)
                 .HasForeignKey(i => i.ExamId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<ExamQuestion>()
                 .HasOne(i => i.Question)
                 .WithMany(q => q.examQuestions)
                 .HasForeignKey(i => i.QuestionId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<StudentExamQuestionAnswer>()
                 .HasOne(s => s.StudentExam)
@@ -48,7 +48,7 @@ namespace Infrastructure.Data
                 .HasOne(s => s.Question)
                 .WithMany()
                 .HasForeignKey(s => s.QuestionId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<StudentExamQuestionAnswer>()
                 .HasOne(s => s.Choice)
@@ -72,7 +72,7 @@ namespace Infrastructure.Data
                 .HasOne(se => se.Subject)
                 .WithMany(s => s.students)
                 .HasForeignKey(se => se.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Subject>()
                 .HasMany(s => s.exams)
@@ -85,6 +85,12 @@ namespace Infrastructure.Data
                 .WithOne(c => c.Question)
                 .HasForeignKey(c => c.QuestionId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Question>()
+            .HasOne(q => q.Subject)
+            .WithMany(s => s.Questions)
+            .HasForeignKey(q => q.SubjectId)
+            .OnDelete(DeleteBehavior.NoAction);
 
             SeedAdminUser(builder);
         }

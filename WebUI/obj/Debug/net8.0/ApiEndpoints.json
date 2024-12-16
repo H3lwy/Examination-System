@@ -114,75 +114,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebUI.Controllers.ChoiceController",
-    "Method": "AddChoices",
-    "RelativePath": "api/Choice/AddChoices",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "choicesDto",
-        "Type": "Application.DTOs.ChoicesDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebUI.Controllers.ChoiceController",
-    "Method": "DeleteChoice",
-    "RelativePath": "api/Choice/DeleteChoice/{choiceId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "choiceId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebUI.Controllers.ChoiceController",
-    "Method": "GetChoicesByQuestion",
-    "RelativePath": "api/Choice/GetChoicesByQuestion/{questionId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "questionId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebUI.Controllers.ChoiceController",
-    "Method": "UpdateChoice",
-    "RelativePath": "api/Choice/UpdateChoice/{choiceId}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "choiceId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "choiceDto",
-        "Type": "Application.DTOs.ChoiceDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ExamController",
     "Method": "AddExam",
     "RelativePath": "api/Exam/AddExam",
@@ -299,13 +230,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebUI.Controllers.QuestionController",
-    "Method": "GetAllQuestions",
-    "RelativePath": "api/Question",
+    "ContainingType": "ExamController",
+    "Method": "GetQuestionsByExam",
+    "RelativePath": "api/Exam/GetQuestionsByExam/{examId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "examId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -371,7 +308,44 @@
     "Parameters": [
       {
         "Name": "questionDto",
-        "Type": "Application.DTOs.QuestionDto",
+        "Type": "Application.DTOs.QuestionWithChoicesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebUI.Controllers.QuestionController",
+    "Method": "GetAllQuestions",
+    "RelativePath": "api/Question/AllQuestions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebUI.Controllers.QuestionController",
+    "Method": "GetQuestionsBySubject",
+    "RelativePath": "api/Question/GetQuestionsBySubject/{subjectId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -499,6 +473,22 @@
       {
         "Name": "subjectDto",
         "Type": "Application.DTOs.SubjectDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SubjectController",
+    "Method": "GetExamHistoryBySubject",
+    "RelativePath": "api/Subject/Examhistory/{subjectId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

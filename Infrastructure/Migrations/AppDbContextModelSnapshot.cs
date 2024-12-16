@@ -102,7 +102,12 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
                     b.HasKey("QuestionId");
+
+                    b.HasIndex("SubjectId");
 
                     b.ToTable("Questions");
                 });
@@ -275,9 +280,9 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "37caa614-aa46-4214-9f4a-bf13cb2947ab",
+                            Id = "71b38f6f-0800-4243-afb1-188c62ca5807",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6245e325-84c5-4a9d-b1fa-2713fadcc45c",
+                            ConcurrencyStamp = "dccd207a-8a7c-4db3-bb81-3316abc5ac71",
                             Email = "hisham.3lwy@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Hisham",
@@ -286,9 +291,9 @@ namespace Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "HISHAM.3LWY@GMAIL.COM",
                             NormalizedUserName = "HISHAM",
-                            PasswordHash = "AQAAAAIAAYagAAAAELSjnmhD85RJimI2BdjqfMOfQnWThnygqHqJXvN0bcyadBfVyqoEQtkJdWRoQdytYw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEME74cLJP21GE9fRViQww5KXkjSikHHf1uP6XQt5Z3j839v63CWG1DHyTTkdL8WxDQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "be3c45a9-ed33-449f-8a5d-abfdc55e23a8",
+                            SecurityStamp = "a6e3d236-40ec-4e15-8d85-74c6b5f025c8",
                             TwoFactorEnabled = false,
                             UserName = "Hisham"
                         });
@@ -323,7 +328,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8dae30e0-53fc-4f51-9e0f-a485ca93013c",
+                            Id = "f95ff4fd-f7f9-4c0f-94f3-ce95677fb3f2",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -418,8 +423,8 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "37caa614-aa46-4214-9f4a-bf13cb2947ab",
-                            RoleId = "8dae30e0-53fc-4f51-9e0f-a485ca93013c"
+                            UserId = "71b38f6f-0800-4243-afb1-188c62ca5807",
+                            RoleId = "f95ff4fd-f7f9-4c0f-94f3-ce95677fb3f2"
                         });
                 });
 
@@ -458,7 +463,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Subject", "Subject")
                         .WithMany("exams")
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Subject");
@@ -469,13 +474,13 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Exam", "Exam")
                         .WithMany("ExamQuestions")
                         .HasForeignKey("ExamId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.Question", "Question")
                         .WithMany("examQuestions")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Exam");
@@ -483,24 +488,35 @@ namespace Infrastructure.Migrations
                     b.Navigation("Question");
                 });
 
+            modelBuilder.Entity("Domain.Models.Question", b =>
+                {
+                    b.HasOne("Domain.Models.Subject", "Subject")
+                        .WithMany("Questions")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("Domain.Models.StudentExam", b =>
                 {
                     b.HasOne("Domain.Models.Exam", "Exam")
                         .WithMany("StudentExams")
                         .HasForeignKey("ExamId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.User", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.Subject", "Subject")
                         .WithMany("students")
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Exam");
@@ -515,19 +531,19 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Models.Question", "Question")
                         .WithMany()
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.Choice", "Choice")
                         .WithMany()
                         .HasForeignKey("SelectedChoiceId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.StudentExam", "StudentExam")
                         .WithMany("studentExamQuestionAnswers")
                         .HasForeignKey("StudentExamId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Choice");
@@ -609,6 +625,8 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Models.Subject", b =>
                 {
+                    b.Navigation("Questions");
+
                     b.Navigation("exams");
 
                     b.Navigation("students");

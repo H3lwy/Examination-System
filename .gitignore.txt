@@ -1,12 +1,24 @@
-# Ignore the .vs folder (Visual Studio)
-.vs/
 
-# Ignore build directories
+~/.gitignore_global
+
+# Ignore Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build outputs
 bin/
 obj/
 
-# Ignore log files
+# Ignore database and design-time files
+*.dbmdl
+*.pdb
 *.log
+*.cache
 
-# Ignore user-specific files
-*.user
+# Ignore system files
+Thumbs.db
+desktop.ini
+

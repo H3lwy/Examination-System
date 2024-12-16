@@ -109,23 +109,19 @@ namespace WebUI.Controllers
                         Result = false
                     });
                 }
-                if (UserExist.IsActive)
+                if (!UserExist.IsActive)
                 {
 
-                    var JwtToken = GenerateJwtToken(UserExist);
-
-                    return Ok(new AuthResult()
-                    {
-                        Token = JwtToken,
-                        Result = true,
-                    });
+                    return Forbid();
 
                 }
 
-                return BadRequest(new AuthResult()
+                var JwtToken = GenerateJwtToken(UserExist);
+
+                return Ok(new AuthResult()
                 {
-                    Errors = new List<string> { "The Account Is Disable" },
-                    Result = false
+                    Token = JwtToken,
+                    Result = true,
                 });
 
             }

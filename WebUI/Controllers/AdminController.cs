@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebUI.Controllers
 {
-    [Authorize(Policy = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase
@@ -106,7 +106,19 @@ namespace WebUI.Controllers
 
             return Ok(new
             {
-                Students = paginatedStudents,
+                Students = students
+        .Skip((pageNumber - 1) * pageSize)
+        .Take(pageSize)
+        .Select(s => new StudentDto
+        {
+            Id = s.Id,
+            FirstName = s.FirstName,
+            LastName = s.LastName,
+            UserName = s.UserName,
+            Email = s.Email,
+            IsActive = s.IsActive
+        })
+        .ToList(),
                 TotalPages = (int)Math.Ceiling((double)students.Count / pageSize),
                 CurrentPage = pageNumber
             });
