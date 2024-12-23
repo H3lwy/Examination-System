@@ -1,0 +1,3 @@
+[submodule "ExaminationSystem-Angular"]
+	path = ExaminationSystem-Angular
+	url = https://github.com/H3lwy/ExaminationSystem-Angular.git
