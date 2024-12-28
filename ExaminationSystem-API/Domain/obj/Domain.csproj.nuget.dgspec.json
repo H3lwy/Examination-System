@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Domain\\Domain.csproj": {}
+    "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Domain\\Domain.csproj": {
+    "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

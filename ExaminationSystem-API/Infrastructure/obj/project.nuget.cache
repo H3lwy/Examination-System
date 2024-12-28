@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKG92qHolR0=",
+  "dgSpecHash": "C1dX5iIn4Wg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\Examination-System-master\\Examination-System-master\\ExaminationSystem-API\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\Examination-System\\ExaminationSystem-API\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
