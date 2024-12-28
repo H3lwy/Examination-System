@@ -1,3 +1,4 @@
+using Domain.Interfaces;
 using Domain.Models;
 using Infrastructure.Configurations;
 using Infrastructure.Data;
@@ -16,6 +17,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
 builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
+
+builder.Services.AddScoped<IEmailService, SendGridEmailService>();
+
 
 builder.Services.AddCors(options =>
 {

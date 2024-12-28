@@ -36,3 +36,15 @@ C:\Users\asus\Desktop\Examination-System\ExaminationSystem-API\Domain\obj\Debug\
 C:\Users\asus\Desktop\Examination-System\ExaminationSystem-API\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\asus\Desktop\Examination-System\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\asus\Desktop\Examination-System\ExaminationSystem-API\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\ADMIN\Desktop\Examination-System-master\Examination-System-master\ExaminationSystem-API\Domain\obj\Debug\net8.0\ref\Domain.dll

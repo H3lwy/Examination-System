@@ -90,7 +90,7 @@ namespace Infrastructure.Data
             .HasOne(q => q.Subject)
             .WithMany(s => s.Questions)
             .HasForeignKey(q => q.SubjectId)
-            .OnDelete(DeleteBehavior.NoAction);
+            .OnDelete(DeleteBehavior.Cascade);
 
             SeedAdminUser(builder);
         }

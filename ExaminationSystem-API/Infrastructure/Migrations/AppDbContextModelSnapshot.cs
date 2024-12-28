@@ -44,7 +44,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Choices");
+                    b.ToTable("Choices", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Exam", b =>
@@ -72,7 +72,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Exams");
+                    b.ToTable("Exams", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.ExamQuestion", b =>
@@ -87,7 +87,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("ExamQuestions");
+                    b.ToTable("ExamQuestions", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Question", b =>
@@ -109,7 +109,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Questions", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.StudentExam", b =>
@@ -147,7 +147,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("StudentExams");
+                    b.ToTable("StudentExams", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.StudentExamQuestionAnswer", b =>
@@ -178,7 +178,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("StudentExamId");
 
-                    b.ToTable("StudentExamQuestionAnswers");
+                    b.ToTable("StudentExamQuestionAnswers", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Subject", b =>
@@ -199,7 +199,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("SubjectId");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.User", b =>
@@ -280,9 +280,9 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "71b38f6f-0800-4243-afb1-188c62ca5807",
+                            Id = "c9efe153-d39f-4fb6-8970-0e1eeb5afb81",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dccd207a-8a7c-4db3-bb81-3316abc5ac71",
+                            ConcurrencyStamp = "af1ac075-8904-426b-8452-ebddb1ed934d",
                             Email = "hisham.3lwy@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Hisham",
@@ -291,9 +291,9 @@ namespace Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "HISHAM.3LWY@GMAIL.COM",
                             NormalizedUserName = "HISHAM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEME74cLJP21GE9fRViQww5KXkjSikHHf1uP6XQt5Z3j839v63CWG1DHyTTkdL8WxDQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPZPcIBGf38HCAf1cuQopU5XmnxvUAhj0pbsKmISzq7OzAQ5byjCz+AxXL3DwAZCHA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a6e3d236-40ec-4e15-8d85-74c6b5f025c8",
+                            SecurityStamp = "61c9952e-2782-4025-8b2d-ef93fe873b5b",
                             TwoFactorEnabled = false,
                             UserName = "Hisham"
                         });
@@ -328,7 +328,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f95ff4fd-f7f9-4c0f-94f3-ce95677fb3f2",
+                            Id = "b77dd17c-390c-420d-b0a7-ffc49c753b7a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -423,8 +423,8 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "71b38f6f-0800-4243-afb1-188c62ca5807",
-                            RoleId = "f95ff4fd-f7f9-4c0f-94f3-ce95677fb3f2"
+                            UserId = "c9efe153-d39f-4fb6-8970-0e1eeb5afb81",
+                            RoleId = "b77dd17c-390c-420d-b0a7-ffc49c753b7a"
                         });
                 });
 
